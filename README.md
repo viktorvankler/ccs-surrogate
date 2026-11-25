@@ -29,13 +29,13 @@ This project bridges classical petroleum reservoir physics with data-driven mach
 
 #### 4. Machine Learning Surrogate Benchmark
 
-Model ArchitectureFamilyR² Score (Unseen Test Set)Mean Absolute Error (MAE)
+Model Architecture Family R² Score (Unseen Test Set), Mean Absolute Error (MAE)
 ****HistGradientBoosting Regressor****
-Gradient Boosted Trees**0.9076****0.485 Bar**
+Gradient Boosted Trees **0.9076** **0.485 Bar**
 ****Random Forest Regressor** (n_estimators=200)**
-Bagging Ensemble0.88280.570 Bar
+Bagging Ensemble 0.8828, 0.570 Bar
 ****Multi-Layer Perceptron (64 × 64)****
-Artificial Neural Network0.87840.527 Bar
+Artificial Neural Network 0.8784, 0.527 Bar
 
  
 
@@ -43,15 +43,3 @@ Artificial Neural Network0.87840.527 Bar
 
 * **Continuous Curve Fit vs. Extreme Outlier Extrapolation:** As seen in the side-by-side comparison above, the 64 × 64 MLP Neural Network fits the smooth Darcy physics curve visibly tighter across the core 0–15 Bar regime than tree-based models, achieving a lower MAE (0.527 Bar) than Random Forest (0.570 Bar). However, a single extreme low-permeability outlier (~36 Bar) penalized the MLP's squared-error R² score (0.8784 vs. 0.9076 for HistGradientBoosting).
 * **Future Work:** Applying log-uniform sampling across low permeabilities (10–30 mD), scaling the dataset to 10,000+ samples, and extending the analytical solver to 2D transient multiphase flow (CO₂-brine displacement) using Physics-Informed Neural Networks (PINNs).
-
-#### 5. How to Run
-
-bash
-
-pip install numpy pandas matplotlib scikit-learn
-python generate_dataset.py
-python ml_surrogate.py
-
-Use code with caution.
-
-Copy code text to clipboard.
