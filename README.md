@@ -11,7 +11,7 @@ Numerical reservoir simulations solve coupled fluid-flow equations across geolog
 
 This project bridges classical petroleum reservoir physics with data-driven machine learning by generating a synthetic 1,500-reservoir dataset and evaluating ensemble tree models against a multi-layer perceptron neural network to approximate steady-state radial Darcy flow. 
 
-#### 2. Project Architecture
+#### 2. Project Framework
 
 * **Reservoir_sim.py**: Defines the CO2Reservoir Python class encapsulating rock and fluid properties (porosity, permeability_md, thickness_m, area_km2, depth_m, viscosity_cp) alongside analytical methods for volumetric CO₂ capacity, hydrostatic pressure, and steady-state radial Darcy pressure buildup.
 * **generate_dataset.py**: Instantiates 1,500 randomized reservoir scenarios across realistic subsurface ranges, executes the physics methods, exports co2_simulation_data.csv, and generates exploratory physics visualizations.
